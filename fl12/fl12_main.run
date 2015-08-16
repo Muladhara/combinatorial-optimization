@@ -1,0 +1,81 @@
+# Reverse Greedy modificato con scambi
+#
+# uso: ampl < fl12_main.run
+#      ampl < fl12_main.run | grep ^OUTPUT
+#
+
+# Utilizza i sottoprogrammi: fl09_data.dat, fl10_dich.run,
+# mk_structs.run, calcola_totali.run, dijkstra.run, elimina_arco.run,
+# tieni_arco.run, rientro_nel_budget.run, sostituisci_arco.run,
+# add_last.run, view_sol.run, load_distance_matrix.run,
+# sostituisci_arco_x.run, dot_grafo.run
+
+commands fl10_dich.run  ;
+let dir := "fl12";
+commands mk_structs.run ;
+
+# hack per realizzare correttamente il primo dot file
+let g_iniziale := g_iniziale union {88}; 
+
+# calcola il costo e la trasmissione totali del grafo 
+let {i in grafo} CT := CT + w[i];
+let {i in grafo} TT := TT + c[i];
+
+print "MAIN  : INIZIO ALGORITMO reverse greedy modificato (con scambi)";
+print "MAIN  : Costo Totale=",CT;
+print "MAIN  : Trasm Totale=",TT;
+
+# ciclo per l'eliminazione degli archi dalla soluzione (reverse greedy)
+# e verifica che tra s e t ci sia un percorso
+
+let cc := 0;
+repeat {
+	   let cc := cc + 1;
+#	   if (CT<B and TT<UB ) then break;
+	   if (CT<B ) then break;
+       if (A_Cn == 0) then break;
+       if (A_Nn == A) then break;
+
+       #prendi l'arco con il costo più alto
+       let acr    := A_C[1];
+       let oldacr := acr;
+
+       # rimuovi acr da A_C
+
+       # risistema il vettore dei candidati dopo aver tolto il primo elemento
+	   let {i in 2..A_Cn} A_C[i-1]:= A_C[i];
+	   let A_C[A_Cn]              := 0;
+	   let A_Cn                   := A_Cn - 1;
+
+	   #trova i nodi relativi all'arco candidato
+	   #      s = nodo 1 di acr
+	   #      t = nodo 2 di acr
+	   let s := nod[acr,1];
+	   let t := nod[acr,2];
+
+	   commands dot_grafo.run;
+
+	   print "MAIN  : Provo ad eliminare l'arco",acr," (",s,",",t,") w=",w[acr]," c=",c[acr];
+	   let g_considerati := g_considerati union {acr};
+
+	   # ---------------------------------------- ALGORITMO PER LA VERIFICA
+	   #                                          DELLA CONNESSIONE DEL GRAFO TRA s E t
+	   commands dijkstra.run;
+	   
+	   let ccc := connesso ;   
+
+	   if (ccc  > 0) then { commands elimina_arco.run; }
+	   if (ccc == 0) then { commands sostituisci_arco.run; }
+
+	   printf "MAIN  : Costo Totale=%2f\n",CT;
+	   printf "MAIN  : Trasm Totale=%2f\n",TT;
+}
+
+let g_non_considerati := grafo diff g_considerati;
+
+if aggiunta then commands add_last.run;
+
+commands view_sol.run;
+
+
+

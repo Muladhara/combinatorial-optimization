@@ -1,0 +1,21 @@
+
+let acr := 0;
+print "SUBSTX: Cerco per l'arco", oldacr, " (",sx,"--",tx,") partendo da=",mm,")";
+for {i in mm..N} {	
+	if fnod[sx,mm]>0 and !(fnod[sx,mm] in grafo) and mm != tx and w[fnod[sx,mm]]<w[oldacr] then break;
+	if fnod[mm,sx]>0 and !(fnod[mm,sx] in grafo) and mm != tx and w[fnod[mm,sx]]<w[oldacr] then { let mm := -mm ; break; }
+	let mm := mm + 1;
+};
+
+if mm <= N then {
+   if mm < 0 then  { let acr := fnod[mm,sx]; }
+    else { let acr := fnod[sx,mm];}
+    print "SUBSTX: Ho trovato l'arco",acr,"(",nod[acr,1],",",nod[acr,2],") con w=", w[acr]," e c=",c[acr];
+ 	let grafo := grafo union {acr};
+ 	let lgrafo := card(grafo);
+	let newacr := acr;
+	let acr := oldacr ;
+	commands dijkstra.run;
+ 	let grafo := grafo diff {newacr};
+ 	let lgrafo := card(grafo);
+} 

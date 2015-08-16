@@ -1,0 +1,24 @@
+
+
+
+let str := "";
+if cc < 10 then let str := "0";
+let fname := ( dir & "/graph-" & str & cc & ".dot" );
+print "strict graph {" > ( fname );
+print "	graph [layout=neato,overlap=scale,mode=KK,Damping=.95];" > ( fname );
+print "	node [label=""\N""];" > ( fname );
+print "	graph [bb=""0,0,783.91,901.2""];" > ( fname );
+for {i in 1..N} {
+		printf "%d [ label = ""%d"" ];\n", i,i > ( fname );
+}
+for {i in 1..A} {
+	if x[i]>0 then
+		# printf "%d -- %d [ label = ""%d"" ];\n", nod[i,1], nod[i,2], i > ( fname );
+		printf "%d -- %d [ label = ""%d\\nw%.2f\\nc%.2f"" ];\n", nod[i,1], nod[i,2], i, w[i], c[i] > ( fname );
+}
+print "}" > ( fname );
+
+
+#	
+
+
