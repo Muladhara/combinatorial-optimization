@@ -1,4 +1,0 @@
-
- print "SUBST : Eliminando l'arco ", oldacr, "il grafo si sconnette, quindi lo mantengo";
- let g_non_rimossi := g_non_rimossi union {oldacr};
- print "SUBST : Non posso eliminare l'arco",oldacr,"quindi me lo tengo";
