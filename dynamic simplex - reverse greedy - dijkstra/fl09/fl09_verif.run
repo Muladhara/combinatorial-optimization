@@ -1,0 +1,21 @@
+let sx1:=0;
+let sx2:=0;
+
+let {i in 1..A } sx1 := sx1 + x[i] ;
+let {i in 1..A } sx2 := sx2 + ceil(x[i]) ;
+
+if sx1 = sx2 then 
+  {
+    print "HO TROVATO UNA SOLUZIONE INTERA";      
+    let nv := 1;
+  }
+
+#if ( abs(sx1 - sx2) < epsilon ) then
+#  {
+#    print "HO QUASI TROVATO UNA SOLUZIONE INTERA";      
+#    let nv := 1;
+#  }
+
+print "VERIF: (sx1,sx2,nv)",sx1,sx2,nv  > trace.txt ;
+print "VERIF: (sx1,sx2,nv)",sx1,sx2,nv  > trace_obj.txt ;
+

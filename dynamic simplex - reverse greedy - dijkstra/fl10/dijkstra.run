@@ -1,0 +1,69 @@
+# An AMPL implementation of Dijkstra's algorithm as described
+# in "Network Flows: Theory, Algorithms, and Applications" by
+# Ahuja, Magnanti, and Orlin.
+
+# si aspetta in acr l'arco da eliminare e verifica se
+# eliminandolo i capi di acr rimangono connessi
+# esce con connesso = 0 se non sono connessi
+#    o con connesso = 1 se sono connessi 
+#
+let P          := {} ; # Nodi etichettati permanentemente
+let CANDIDATES := {} ; # Nodi candidati
+let T          := {} ; # Nodi candidati temporaneamente
+
+let {i in 1..s-1}  T := T union {i} ; # Tutti tranne s
+let {i in s+1..N}  T := T union {i} ; #
+
+commands load_distance_matrix.run;
+
+let d[s] := 0;
+let J[s] := 0;
+
+let ii   := s;
+
+for {i in 1..N} if (i != ii) then { 
+   	let J[i]   := if D[ii,i]<Infinity then 1            else Infinity;		# Adiacenza
+   	let d[i]   := if D[ii,i]<Infinity then w[arc[i,ii]] else Infinity;		# Costo
+	let pred[i] := ii;
+} else {
+   	let J[i]   := 0;
+   	let d[i]   := 0;
+}
+
+repeat while card(P) < N {
+
+	   # Candidati 
+  	   let CANDIDATES := {m1 in T: d[m1] == min{m2 in T} d[m2]};
+
+	   # Se non ci sono candidati il grafo e sconnesso
+	   if card(CANDIDATES) == 0 then break;	 
+
+	   # Il candidato ideale è il primo dell'elenco
+  	   let ii := first(CANDIDATES);
+
+	   # Nodi etichettati permanentemente
+  	   let P := P union {ii};
+
+	   # Nodi etichettati temporaneamente
+  	   let T := T diff {ii};
+
+  	   for {j in T} {
+	       if J[ii] == 1.0 then {
+  	   	  if arc[j,ii] == 0 then continue;
+  	   	  if d[j] > d[ii] + w[arc[j,ii]] then {
+   	  	     let d[j] := d[ii] + w[arc[j,ii]];
+		     let pred[j]:=ii;
+     	     let J[j] := 1.0;
+      		  }
+  	       }
+        }	   
+}
+
+let connesso := 0;
+let {i in 1..N} connesso :=  connesso + d[i] ;
+if connesso == Infinity then let connesso := 0 ;
+                        else let connesso := 1 ;
+
+printf "DJKSTR: (s,t)=(%d,%d) d[%d]=%.2f J[%d]=%.0f connesso=%d (LEN(grafo)=%d)\n",s,t,t,d[t],t,J[t],connesso,card(grafo);
+
+

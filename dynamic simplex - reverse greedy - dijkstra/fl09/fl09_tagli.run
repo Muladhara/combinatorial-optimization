@@ -1,0 +1,120 @@
+print "TAGLI: Inizio l'oracolo di separazione con ",u," vincoli" > trace.txt;
+
+commands dot_sol.run;
+
+# Creazione del vettore delle capacita a partire 
+# dalla soluzione precedente del problema core
+let {i in 1..A} ct[i]      := x[i];
+let {i in 1..A} ct[i+A]    := x[i];
+let             ct[2*A+1]  := Infinity;
+
+#			 display Ms > trace_obj.txt;
+#			 display ct > trace_obj.txt;
+#			 display wt > trace_obj.txt;
+
+# Creazione del vettore dei costi
+let {i in 1..2*A} wt[i]     := 0;
+let               wt[2*A+1] := 1;
+
+let valore_minimo := Infinity ;
+let nv := 1;
+
+
+# Ciclo per tutte le coppie di nodi s-t
+print "TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO " > trace.txt;
+for {s in 1..N , t in 1..N} {
+    if( s != t ) then {    
+#		print "TAGLI: Fase 1:                                     s,t= ",s,t > trace.txt;
+		  	
+ 			 # valorizza l'arco di conservazione del flusso
+			 # quello di retroazione da t ad s 
+	             let Ms[s,2*A+1] :=  1;
+		     let Ms[t,2*A+1] := -1;
+		     
+			 
+#			 print "solve Flusso";
+
+
+			 # Risolve il problema intero
+		     solve Flusso > msgs;
+
+#			 display Flusso;
+		     
+			 # Registra la soluzione,
+			 # cioè la capacita degli archi appartenenti al taglio trovato
+		     let { j in 1..A+A} ymin[s,t,j] := Capacita[j];
+
+		     # il flusso corrispondente a quel taglio
+		     let                flux[s,t]   := Flusso;
+
+			 # Valutazione del minimo dei massimi flussi			 
+		     if ( Flusso < valore_minimo ) then {
+			 	let valore_minimo := Flusso ;
+			 } 
+
+		 	 #Azzera l'ultimo arco dove prima era valorizzato
+			 let Ms[s,2*A+1] := 0;
+			 let Ms[t,2*A+1] := 0;
+      } 
+}
+
+print "(cc,u,valore_minimo)|=",cc,u,valore_minimo ;
+
+# A questo punto in ymin[s,t,j in {1..A+A+1}]
+# ci sono le soluzioni e in flux il valore del flusso
+# in valore_minimo c'è il minore dei flussi
+
+print "TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo) ",u,valore_minimo > trace.txt;
+
+
+#let nv := 1;    # controllo del loop principale 
+	            # Se non troverà nessun vincolo
+				# allora uscirà dal loop principale
+				# del problema core
+
+let nvi := 0;   # contatore di vincoli immesse in questo giro
+
+let nvt := 0;   # contatore di vincoli trovati in questo giro
+let nvr := 0;   # contatore di vincoli rigettati in questo giro
+# Calcola quanti vincoli sono stati trovati
+for {s in 1..N , t in 1..N} {
+	if( s != t ) then {
+	  if ( flux[s,t] = valore_minimo ) then {
+	  	 let nvt := nvt + 1;
+	  }
+  }
+}
+
+#display ymin > trace.txt;
+#display flux > trace.txt;
+
+# if (valore_minimo < 1) then {
+
+# Verifica se si devono immettere nella matrice dei vincoli
+# 
+for {s in 1..N , t in 1..N} {
+    if( s != t ) then {
+	  if ( flux[s,t] = valore_minimo ) then {
+	  	 # considera il vincolo per l'inserimento.
+		 # può essere inserito se non è già	
+		 # stato trovato
+
+		 # sct - Capacita' Totale del Taglio
+		 # Memorizza la sommatoria delle capacita relative agli archi del taglio
+		 let { i in 1..A+A } sct := ct[i] * ymin[s,t,i] ;
+
+		 # Valuta la capacità totale del taglio
+		 # e verifica che sia un taglio violato o meno	
+		  if ( sct < 1 ) then { commands fl09_salva_vincolo.run; }		 
+		 # ATTENZIONE: 
+		 # con questo break aggiunge solo un vincolo alla volta
+		 if ( nvi = 1 ) then { break; }
+	  }
+   }
+}
+
+# }
+
+print "TAGLI: Fine dell'oracolo di separazione: Vincoli presenti=",u, " trovati=", nvt, " rigettati=", nvr, " aggiunti=", nvi, "valore minimo=", valore_minimo > trace.txt;
+
+# print "TAGLI: Fine dell'oracolo di separazione: Vincoli presenti=",u, " aggiunti=", nvi, "valore minimo=", valore_minimo > trace.txt;

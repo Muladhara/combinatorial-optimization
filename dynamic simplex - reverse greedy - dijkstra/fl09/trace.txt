@@ -1,0 +1,312 @@
+ MAIN: ------------------------------------------------------------ 
+ MAIN: risolvo il problema core (# cicli  1 )
+ MAIN: soluzione di costo= 23  = | 24.89000000000001 | trasmissione= 84.5265517241379
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 34.34827586206896 35 0
+TAGLI: Inizio l'oracolo di separazione con  0  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  0 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 1  trovati= 630  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 1
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  2 )
+ MAIN: soluzione di costo= 23.000000000000004  = | 24.990000000000013 | trasmissione= 84.37758620689652
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35.313793103448276 36 0
+TAGLI: Inizio l'oracolo di separazione con  1  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  1 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 2  trovati= 568  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 2
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  3 )
+ MAIN: soluzione di costo= 23  = | 25.00000000000001 | trasmissione= 84.36368965517238
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36.310344827586206 37 0
+TAGLI: Inizio l'oracolo di separazione con  2  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  2 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 3  trovati= 504  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 3
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  4 )
+ MAIN: soluzione di costo= 23.000000000000004  = | 23.790000000000013 | trasmissione= 81.73954545454544
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 34.64090909090909 35 0
+TAGLI: Inizio l'oracolo di separazione con  3  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  3 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 4  trovati= 568  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 4
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  5 )
+ MAIN: soluzione di costo= 23  = | 23.80000000000001 | trasmissione= 81.72481818181816
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35.63636363636363 36 0
+TAGLI: Inizio l'oracolo di separazione con  4  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  4 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 5  trovati= 504  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 5
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  6 )
+ MAIN: soluzione di costo= 22.999999999999996  = | 23.20000000000001 | trasmissione= 80.87376923076921
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35.92307692307692 36 0
+TAGLI: Inizio l'oracolo di separazione con  5  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  5 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 6  trovati= 438  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 6
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  7 )
+ MAIN: soluzione di costo= 22.999999999999996  = | 25.30000000000001 | trasmissione= 78.99684615384614
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35.11538461538461 36 0
+TAGLI: Inizio l'oracolo di separazione con  6  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  6 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 7  trovati= 438  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 7
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  8 )
+ MAIN: soluzione di costo= 22.999999999999996  = | 27.20000000000001 | trasmissione= 77.97823809523807
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 34.52380952380952 36 0
+TAGLI: Inizio l'oracolo di separazione con  7  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  7 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 8  trovati= 616  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 8
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  9 )
+ MAIN: soluzione di costo= 23  = | 27.210000000000008 | trasmissione= 77.97019047619045
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35.51904761904762 37 0
+TAGLI: Inizio l'oracolo di separazione con  8  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  8 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 9  trovati= 368  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 9
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  10 )
+ MAIN: soluzione di costo= 22.999999999999996  = | 23.210000000000008 | trasmissione= 77.73199999999997
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35.78999999999999 36 0
+TAGLI: Inizio l'oracolo di separazione con  9  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  9 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 10  trovati= 370  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 10
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  11 )
+ MAIN: soluzione di costo= 22.999999999999996  = | 28.310000000000013 | trasmissione= 77.57199999999997
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35.489999999999995 38 0
+TAGLI: Inizio l'oracolo di separazione con  10  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  10 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 11  trovati= 300  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 11
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  12 )
+ MAIN: soluzione di costo= 23  = | 28.310000000000013 | trasmissione= 77.57099999999997
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35.489999999999995 38 0
+TAGLI: Inizio l'oracolo di separazione con  11  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  11 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 12  trovati= 548  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 12
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  13 )
+ MAIN: soluzione di costo= 23  = | 28.320000000000014 | trasmissione= 77.55999999999997
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36.47999999999999 39 0
+TAGLI: Inizio l'oracolo di separazione con  12  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  12 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 13  trovati= 228  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 13
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  14 )
+ MAIN: soluzione di costo= 22.999999999999996  = | 24.320000000000007 | trasmissione= 76.95434482758617
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36.54482758620689 37 0
+TAGLI: Inizio l'oracolo di separazione con  13  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  13 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 14  trovati= 368  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 14
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  15 )
+ MAIN: soluzione di costo= 23  = | 29.220000000000013 | trasmissione= 76.42549999999997
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36.02999999999999 39 0
+TAGLI: Inizio l'oracolo di separazione con  14  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  14 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 15  trovati= 228  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 15
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  16 )
+ MAIN: soluzione di costo= 22.999999999999996  = | 29.520000000000014 | trasmissione= 75.72536206896548
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36.56206896551724 39 0
+TAGLI: Inizio l'oracolo di separazione con  15  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  15 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 16  trovati= 154  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 16
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  17 )
+ MAIN: soluzione di costo= 23.000000000000004  = | 28.32000000000001 | trasmissione= 70.24949999999997
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35.949999999999996 38 0
+TAGLI: Inizio l'oracolo di separazione con  16  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  16 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 17  trovati= 228  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 17
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  18 )
+ MAIN: soluzione di costo= 23  = | 29.12000000000001 | trasmissione= 70.20664285714281
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36.37857142857142 39 0
+TAGLI: Inizio l'oracolo di separazione con  17  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  17 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 18  trovati= 154  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 18
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  19 )
+ MAIN: soluzione di costo= 23.000000000000007  = | 28.420000000000016 | trasmissione= 69.2358636363636
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 34.84545454545454 37 0
+TAGLI: Inizio l'oracolo di separazione con  18  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  18 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 19  trovati= 550  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 19
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  20 )
+ MAIN: soluzione di costo= 23.000000000000007  = | 28.620000000000015 | trasmissione= 69.21040909090907
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35.66363636363636 38 0
+TAGLI: Inizio l'oracolo di separazione con  19  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  19 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 20  trovati= 294  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 20
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  21 )
+ MAIN: soluzione di costo= 23.000000000000004  = | 29.41000000000001 | trasmissione= 69.06168181818178
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 35 38 0
+TAGLI: Inizio l'oracolo di separazione con  20  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  20 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 21  trovati= 358  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 21
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  22 )
+ MAIN: soluzione di costo= 23.000000000000004  = | 29.420000000000012 | trasmissione= 69.0442727272727
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36 39 0
+TAGLI: Inizio l'oracolo di separazione con  21  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  21 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 22  trovati= 78  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 22
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  23 )
+ MAIN: soluzione di costo= 23.000000000000004  = | 29.720000000000013 | trasmissione= 64.10726111111109
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36 39 0
+TAGLI: Inizio l'oracolo di separazione con  22  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  22 0
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 23  trovati= 350  rigettati= 0  aggiunti= 1 valore minimo= 0
+ MAIN: Numero di vincoli totali 23
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  24 )
+ MAIN: soluzione di costo= 22.999999999999996  = | 29.920000000000012 | trasmissione= 64.0284833333333
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 37 40 0
+TAGLI: Inizio l'oracolo di separazione con  23  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  23 0.4999999999999998
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 24  trovati= 9  rigettati= 0  aggiunti= 1 valore minimo= 0.4999999999999998
+ MAIN: Numero di vincoli totali 24
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  25 )
+ MAIN: soluzione di costo= 23  = | 36.12000000000001 | trasmissione= 63.816477272727234
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36 42 0
+TAGLI: Inizio l'oracolo di separazione con  24  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  24 0.9477272727272663
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 25  trovati= 1  rigettati= 0  aggiunti= 1 valore minimo= 0.9477272727272663
+ MAIN: Numero di vincoli totali 25
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  26 )
+ MAIN: soluzione di costo= 23  = | 32.92000000000001 | trasmissione= 63.815862637362606
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36 41 0
+TAGLI: Inizio l'oracolo di separazione con  25  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  25 0.7472527472527197
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 26  trovati= 350  rigettati= 0  aggiunti= 1 valore minimo= 0.7472527472527197
+ MAIN: Numero di vincoli totali 26
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  27 )
+ MAIN: soluzione di costo= 23  = | 32.92000000000001 | trasmissione= 63.81041011235952
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36.25842696629216 41 0
+TAGLI: Inizio l'oracolo di separazione con  26  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  26 0.9999999999999999
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 27  trovati= 28  rigettati= 0  aggiunti= 1 valore minimo= 0.9999999999999999
+ MAIN: Numero di vincoli totali 27
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  28 )
+ MAIN: soluzione di costo= 23  = | 33.92000000000001 | trasmissione= 63.45352008032124
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36.1847389558233 42 0
+TAGLI: Inizio l'oracolo di separazione con  27  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  27 0.3694779116465995
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 28  trovati= 3  rigettati= 0  aggiunti= 1 valore minimo= 0.3694779116465995
+ MAIN: Numero di vincoli totali 28
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  29 )
+ MAIN: soluzione di costo= 23  = | 33.92000000000001 | trasmissione= 63.439854581673266
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 36.81274900398405 42 0
+TAGLI: Inizio l'oracolo di separazione con  28  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  28 1
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 29  trovati= 1560  rigettati= 1  aggiunti= 1 valore minimo= 1
+ MAIN: Numero di vincoli totali 29
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  30 )
+ MAIN: soluzione di costo= 22.99999999999999  = | 32.120000000000005 | trasmissione= 59.855999999999916
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 37.27499999999998 42 0
+TAGLI: Inizio l'oracolo di separazione con  29  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  29 0.7749999999999801
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 30  trovati= 152  rigettati= 0  aggiunti= 1 valore minimo= 0.7749999999999801
+ MAIN: Numero di vincoli totali 30
+ MAIN: ----------------------------- 
+ MAIN: risolvo il problema core (# cicli  31 )
+ MAIN: soluzione di costo= 22.99999999999999  = | 32.42 | trasmissione= 59.79186641221366
+ MAIN: verifica la soluzione 
+VERIF: (sx1,sx2,nv) 37.01908396946561 43 0
+TAGLI: Inizio l'oracolo di separazione con  30  vincoli
+TAGLI: Fase 1:                                     VALUTAZIONE del VALORE MINIMO 
+TAGLI: Fase 2:                                     VALUTAZIONE VINCOLI (u,valore_minimo)  30 0.9999999999999998
+TAGLI: Fine dell'oracolo di separazione: Vincoli presenti= 30  trovati= 1  rigettati= 1  aggiunti= 0 valore minimo= 0.9999999999999998
+ MAIN: Numero di vincoli totali 30
+ MAIN: ----------------------------- 
+Tempo totale di soluzione:  323.49878

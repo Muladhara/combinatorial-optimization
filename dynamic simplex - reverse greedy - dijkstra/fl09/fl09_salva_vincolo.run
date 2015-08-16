@@ -1,0 +1,96 @@
+print "Valutazione del vincolo" > trace_vincoli.txt;
+
+# Questo modulo deve valutare se il vincolo considerato
+# è già presente nell'elenco dei vincoli del problema core
+# e nel caso che non lo sia salvarlo come nuovo vincolo
+
+# Variabili utilizzate
+# in input:
+#  s,t - indici dell'arco
+# ymin - soluzione del problema intero
+#   ct - capacità  
+#    u - indice nell'elenco dei vincoli violati inseriti nel problema core
+#    V - matrice dei vincoli del core
+#
+
+#u è il numero dei vincoli
+
+let a  := 0;    # componenti non nulle
+let nz := 0;    # componenti nulle
+
+print " Vincolo* [ ", u+1 ,"]="                > trace_vincoli.txt;
+# Costruisce il vincolo a partire dalle componenti della soluzione del problema del massimo flusso
+for { i in 1..A } {
+      if ( ymin[s,t,i  ] > 0) || ( ymin[s,t,i+A] > 0) then {
+	     print " + x_" , i                     > trace_vincoli.txt;
+  		 let a := a + 1 ; 
+  		 let vP[i] := 1;
+      } else {
+  	  	 let vP[i] := 0;
+  	     let nz := nz + 1;
+      }
+}
+print " >= 1  ( x_non nulle", a,"x_nulle", nz, " )" > trace_vincoli.txt;
+
+# In vP adesso c'è il vincolo
+   
+# Valuta se il vincolo sia gia presente nella matrice 
+let ex := 0;
+# verifica che il vincolo non sia nullo 
+if (nz < A) then {  # se il vincolo non è completamente nullo
+    if u = 0 then 
+	   let ex := -1; #serve solo per l'inserimento del  primo vincolo
+	else
+   	for { i in 1..u } {
+  		let a  := 1;  # posizione nel vettore del vincolo
+
+		# Scandisce tutte le componenti
+		# e se ne trova una differente
+		# assegna ex = -1
+		# altrimenti assegna ex = n. vincolo trovato uguale
+		# questo avviene all'ultima componente del vincolo
+		# e rimane vero a meno che proprio l'ultima componente
+		# non sia nulla
+  		let ex := 0;
+  		repeat {
+      		if (a = A) then { 
+           	 	let ex := i; # Vincolo replicato prima ancora di aver valutato l'ultima componente del vincolo					
+       		}
+      		if (V[i,a] != vP[a]) then { 
+                let ex := -1 ;
+            }
+	      	let a:= a + 1;
+	    } while ex=0;
+
+		# Se trova un vincolo precedente
+		# allora avverte l'utente e termina il ciclo
+	    if (ex > 0) then { 
+		   print "Vincolo già presente come Vincolo[",i,"]" > trace_vincoli.txt; 
+		   break;
+	    }
+	}
+
+	if (ex < 0) then {
+		   # Se il vincolo esaminato non è uguale ad un vincolo precedente
+		   # allora lo inserisce
+	       let u := u + 1;            # Incrementa il numero dei vincoli
+	       let { i in 1..A } V[u,i]:=vP[i] ; # Copia il vincolo in esame
+	       let d[u] := 1;                                 # termine noto
+	       print "Nuovo Vincolo Inserito",  u  > trace_vincoli.txt ; 
+		   let nvi := nvi + 1;
+
+		   let nv := 0;    # controllo del loop principale 
+			    	  	   # così indica di non uscire
+						   # perché ha aggiunto almeno un vincolo
+
+    	} else { 
+		   if (ex = 0) then {
+		   	  print "ERRORE" > trace.txt;
+		   } else {
+		     let nvr := nvr + 1;
+		     print "Nuovo Vincolo NON Inserito",  u , "perché uguale a ", ex > trace_vincoli.txt ;
+		   }
+		}
+   } 
+
+

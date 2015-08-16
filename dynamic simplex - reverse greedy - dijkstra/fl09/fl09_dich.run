@@ -1,0 +1,81 @@
+option solver cplex;
+#option presolve 200;
+option solver_msg 0;
+option display_width 1000;
+#option relax_integrality 1;
+#option omit_zero_rows 1;
+#			 option presolve 1;
+#			 option pl_linearize 1;
+#			 option substout 1;
+# option show_stats 1;
+# option abs_boundtol 2.220446049250313e-16;
+# option rel_boundtol 9.234235950849758e-16;
+
+param N;  # Numero di nodi
+param A;  # Numero di archi
+
+# Numero Massimo Vincoli
+param MV;
+
+#Banda Costi e Budget 
+param w {1..A};  # Costo degli archi
+param c {1..A};  # Capacità degli archi (trasmissione)
+param B;         # Budget
+
+#Matrice incidenza grafo problema core 
+param M {1..N, 1..A} ;
+
+#Matrice incidenza grafo flusso orientata e raddoppiata 
+param Ms {1..N,1..2*A+1};
+
+param u default 0;				# Numero dei vincoli
+param d {1..MV} default 0;		# Termine noto dei vincoli (=1 sempre)
+param V {1..u, 1..A} default 0;	# Matrice dei vincoli
+
+param wt  {1..A+A+1} default 0; # sono i costi del flusso, solo l'arco di conservazione del flusso è a 1
+param ct  {1..A+A+1} default 0; # sono le capacità del flusso (equivale alla soluzione rilassata)
+param domanda {1..N} default 0; # termine noto del vincolo d'incidenza (=0 sempre)
+
+# param arco;
+
+param nv default 0;  # Parametro che indica la permanenza nel loop principale (se 1 esce)
+
+param nvi default 0; # Numero vincoli inseriti 
+param nvt default 0; # Numero vincoli trovati
+param nvr default 0; # Numero vincoli rigettati
+
+param cc default 0;  # Numero cicli di core 
+param TW default 0;  # Costo Totale
+
+# param epsilon default 0.01;
+
+data fl09_data.dat;
+
+param valore_minimo default Infinity;
+param ymin {1..N, 1..N, 1..A+A} default 0; #come taglio_minimo nell'esempio
+param flux {1..N, 1..N} default 0; # equivale al valore taglio minimo
+param yM {1..A+A} default 0;
+param vP {1..A} default 0;
+
+# Variabili di lavoro
+param sx1 default 0;
+param sx2 default 0;
+param a   default 0;
+param sct default 0;
+param ex  default 0;
+param nz  default 0;
+param bb  default 0;
+param jj ;
+param ii ;
+
+
+# contiene in nodi a partire dal numero dell'arco
+param nod{1..A,1..2} default 0;
+
+# contiene gli archi nell'incrocio tra i nodi
+param fnod{1..N,1..N} default 0;
+
+
+param dir symbolic;
+param fname symbolic;
+param str symbolic;

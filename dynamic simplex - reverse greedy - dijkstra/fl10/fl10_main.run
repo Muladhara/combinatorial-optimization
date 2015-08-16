@@ -1,0 +1,82 @@
+# Reverse Greedy con scambi alla fine
+#
+# uso: ampl < fl10_main.run
+#      ampl < fl10_main.run | grep ^OUTPUT
+#
+
+# Utilizza i sottoprogrammi: fl09_data.dat, fl10_dich.run,
+# mk_structs.run, calcola_totali.run, dijkstra.run, elimina_arco.run,
+# tieni_arco.run, rientro_nel_budget.run, sostituisci_arco.run,
+# add_last.run, view_sol.run, load_distance_matrix.run,
+# sostituisci_arco_x.run, dot_grafo.run
+
+commands fl10_dich.run ;
+let dir := "fl10";
+commands mk_structs.run;
+
+# Calcola il costo totale CT e la trasmissione totale TT
+#
+commands calcola_totali.run; 
+
+print  "MAIN  : INIZIO ALGORITMO reverse greedy (con scambi alla fine)";
+printf "MAIN  : Costo Totale=%.2f\n",CT;
+printf "MAIN  : Trasm Totale=%.2f\n",TT;
+
+let cc := 0;  # numero di cicli
+repeat {
+	   let cc := cc + 1;
+	   
+	   # Condizioni di uscita dal ciclo
+	   #
+	   if (CT<B)      then break;  # Ho raggiunto il budget
+       if (A_Cn == 0) then break;  # Ho terminato gli archi da considerare
+
+       # prendi l'arco con il costo più alto
+	   #
+       let acr    := A_C[1];
+       let oldacr := acr;
+
+       # risistema il vettore dei candidati dopo aver tolto il primo elemento
+	   #
+	   let {i in 2..A_Cn} A_C[i-1]:= A_C[i];
+	   let A_C[A_Cn]              := 0;
+	   let A_Cn                   := A_Cn - 1;
+
+	   # trova i nodi relativi all'arco candidato
+	   #      s = nodo 1 di acr
+	   #      t = nodo 2 di acr
+	   #
+	   let s := nod[acr,1];
+	   let t := nod[acr,2];
+
+	   # Produci il file dot del passo attuale
+	   #
+	   if grafici then commands dot_grafo.run;
+
+	   # Verifica della connessione del grafo tra s e t
+	   # 
+	   print "MAIN  :  Provo ad eliminare l'arco",acr," (",s,",",t,") w=",w[acr]," c=",c[acr];
+	   let g_considerati := g_considerati union {acr};
+	   commands dijkstra.run;
+	   if connesso then { commands elimina_arco.run; }
+	               else { commands tieni_arco.run;   }
+}
+print  "MAIN  : Fine della fase reverse greedy";
+printf "MAIN  : Costo Totale           = %.2f\n",CT;
+printf "MAIN  : Trasmissione Totale    = %.2f\n",TT;
+
+# Sostituzione archi fuori budget
+#
+commands rientro_nel_budget.run;
+
+# Aggiunta eventuali archi fino a completare il budget
+#
+commands add_last.run;
+
+# Visualizza la soluzione finale
+#
+commands view_sol.run;
+
+
+
+

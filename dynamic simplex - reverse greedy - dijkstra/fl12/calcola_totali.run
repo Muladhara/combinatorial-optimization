@@ -1,0 +1,5 @@
+# calcola il costo e la trasmissione totali del grafo 
+let CT := 0;
+let TT := 0;
+let {i in grafo} CT := CT + w[i];
+let {i in grafo} TT := TT + c[i];

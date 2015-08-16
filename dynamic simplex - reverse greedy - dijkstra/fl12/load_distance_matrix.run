@@ -1,0 +1,33 @@
+
+let {i in 1..N,j in 1..N}      D[i,j] := Infinity;
+let {i in 1..N,j in 1..N}    arc[i,j] := 0;
+let {i in 1..N}                  d[i] := Infinity;
+let {i in 1..N}               pred[i] := 0;
+let {i in 1..N}                  J[i] := 0;
+
+# display grafo;
+# print "Carico la matrice delle distanze";
+let jj := 0;
+let n2 := 0;
+for {k in grafo} {
+	let n1 := k;
+	if n1 == acr then continue ; 
+	let n2 := n2 + 1;
+	for {i in 1..N} {
+   		if (M[i,n1]==1 and jj==1) then {
+  	  	   let jj := 0;
+	  	   let t1 := i;		   
+		   let D[s1,t1] := w[n1] ;
+	       	   let D[t1,s1] := w[n1] ;
+		   let arc[s1,t1] := n1;
+		   let arc[t1,s1] := n1;
+	  	   break;
+   	    }
+   		if (M[i,n1]==1 and jj==0) then {
+	   	  let jj := 1;
+		  let s1 := i;
+	   }
+   }
+}
+
+#display D;
