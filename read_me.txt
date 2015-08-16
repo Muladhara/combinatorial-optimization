@@ -8,7 +8,7 @@ La soluzione viene scritta in fl10_sol.dat
 
 
 In fl12  viene implementato il Reverse Greedy modificato con scambi.
-Utilizza i sottoprogrammi: fl09_data.dat, fl10_dich.run,  mk_structs.run, calcola_totali.run, dijkstra.run, elimina_arco.run,tieni_arco.run, rientro_nel_budget.run, sostituisci_arco.run, add_last.run, view_sol.run, load_distance_matrix.run,sostituisci_arco_x.run, dot_grafo.run 
+Utilizza i sottoprogrammi: fl09_data.dat, fl10_dich.run,  mk_structs.run, calcola_totali.run, dijkstra.run, elimina_arco.run,ottieni_arco.run, rientro_nel_budget.run, sostituisci_arco.run, add_last.run, view_sol.run, load_distance_matrix.run,sostituisci_arco_x.run, dot_grafo.run 
 La soluzione viene scritta in fl12_sol.dat
 
 
