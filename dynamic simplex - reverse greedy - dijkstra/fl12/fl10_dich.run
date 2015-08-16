@@ -1,0 +1,132 @@
+option solver cplex;
+option display_width 1000;
+
+param N;  
+param A;
+
+param MV;
+
+param x{1..A}; # Soluzione rilassata
+param UB ;     # Trasmissione della soluzione rilassata = UPPER BOUND
+
+#Banda Costi e Budget 
+param w {1..A}; # trasmissione
+param c {1..A}; # Costo
+param B;        # Budget
+
+#Matrice incidenza grafo problema core 
+param M {1..N, 1..A} ;
+
+#Matrice incidenza grafo flusso-  orientata e raddoppiata 
+param Ms {1..N,1..2*A+1};
+
+#Dati:
+data fl09_data.dat;
+data fl10_data.dat;  # qui c'e' la x 
+
+param A_F{1..A} default 0;
+param A_Fn default 1;
+
+param A_Z{1..A} default 0;
+param A_Zn default 1;
+
+param A_U{1..A} default 0;
+param A_Un default 1;
+
+param AO default 0;
+param jj ;
+param ii ;
+
+param A_C{1..A};
+param A_Cn default 0;
+
+param A_E{1..A};
+param A_En default 0;
+
+param A_K{1..A};
+param A_Kn default 0;
+
+param A_N{1..A};
+param A_Nn default 0;
+
+set g_iniziale default {};
+set g_aggiunti default {};
+set g_rimossi default {};
+set g_non_rimossi ordered default {};
+set g_non_considerati default {};
+set g_considerati default {};
+set g_sostituiti default {};
+set g_non_candidabili default {   }; # 62 132 113
+
+set grafo;      # grafo di lavoro
+param lgrafo default 0; # grado del grafo di lavoro
+
+
+param CT default 0.0;
+param TT default 0.0;
+param acr default 0;
+param s default 0;
+param t default 0;
+
+# parametri per l'Algoritmo di Floyd-Warshall
+
+param connesso default 0;
+
+# Matrice delle distanze
+# Inizializzata ad Infinito
+# tranne 0 se i=j 
+# e costo negli archi
+param D{1..N,1..N} default Infinity;
+
+# Matrice dei predecessori
+# param pred{1..N,1..N} default 0; 
+
+# True if a negative-cost
+# param neg_cycle_found default 0;
+
+
+param n1;   # The predecessor node in a negative cycle
+param n2;   # The current node in a negative cycle
+
+param s1;
+param t1;
+
+set NODES_IN_PATH ordered default {};	     # Nodes in the path from s to t
+
+
+                                             # cycle is found
+param arc{1..N,1..N} default 0;
+param nod{1..A,1..2} default 0;
+param fnod{1..N,1..N} default 0;
+
+
+param d {1..N} default Infinity;	   # distance lables
+param pred {1..N} default 0;		   # predecessor on shortest path
+
+
+set P default {};	       # permanetly-labled nodes
+set T default {};       # nodes with temporary lables
+
+set CANDIDATES ordered default {}; # Nodes that can be moved from
+                                   # T to P
+
+param J {1..N} default 0;
+param dbg default 0;
+
+param cc ;
+param kk ;
+param mm ;
+param newacr;
+param oldacr;
+param ccc ;
+param sx ;
+param tx ;
+
+param color symbolic;
+param style symbolic;
+param dir symbolic;
+param fname symbolic;
+param str symbolic;
+
+param aggiunta binary default 1;
+param grafici binary default 1;

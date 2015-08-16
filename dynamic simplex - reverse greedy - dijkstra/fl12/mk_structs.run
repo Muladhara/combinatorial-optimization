@@ -1,0 +1,86 @@
+# Crea matrici, grafi e strutture 
+
+# ------------------------------------------------------------
+# Crea la matrice archi-nodi e la matrice nodi-nodi/arco
+#
+let jj := 0;
+for {j in 1..A} {
+	for {i in 1..N} {
+   		if (M[i,j]==1 and jj==1) then {
+  	  	   let jj := 0;
+		   let nod[j,2] := i;
+		   let fnod[nod[j,1],nod[j,2]]:=j;
+		   let fnod[nod[j,2],nod[j,1]]:=j;
+	  	   break;
+   	    }
+   		if (M[i,j]==1 and jj==0) then {
+	   	  let jj := 1;
+		  let nod[j,1] := i;
+	   }
+   }
+}
+
+# ------------------------------------------------------------
+# creazione dei vettori di archi a zero A_Z, a uno A_U
+# e gli archi da candidare A_F
+#
+for {i in 1..A} {
+    if (x[i]=0) then {
+	   let A_Z[A_Zn] := i; let A_Zn := A_Zn+1; 
+	}
+    if (x[i]=1) then {
+	    let A_U[A_Un] := i; let A_Un := A_Un+1; 
+	    let A_F[A_Fn] := i; let A_Fn := A_Fn+1; 
+	}
+    if (x[i]>0 and x[i]<1) then {
+         let A_F[A_Fn] := i; let A_Fn := A_Fn+1; 
+    }
+}
+
+# ------------------------------------------------------------
+
+# ordina i potenziali candidati creando l'elenco degli archi candidati
+# escludi i non candidabili
+#
+# let A_C[1]:=A_F[1];
+let kk := 0;
+for {i in 1..A_Fn-1} {
+	if (A_F[i] in g_non_candidabili) then { continue; }
+	let kk := kk + 1;
+    	let A_C[kk]:=A_F[i];
+	if i==1 then continue;
+	
+	 for {j in  1..kk-1} {
+        let jj := kk-j;
+        # print j,jj,A_C[jj+1],w[A_C[jj+1]],A_C[jj],w[A_C[jj]];
+        if (w[A_C[jj+1]]>w[A_C[jj]]) then {
+	   	   let AO:=A_C[jj+1];
+	   	   let A_C[jj+1]:=A_C[jj];
+	   	   let A_C[jj]:=AO;
+		}
+    };
+};
+
+# risistema il contatore (numero delle componenti dei vettori)
+let A_Cn := kk ;
+let A_Un := A_Un - 1 ;
+
+# ------------------------------------------------------------
+#
+#
+# costruisce il grafo di partenza (componenti a uno e frazionarie cioè candidate)
+let grafo := g_non_candidabili;
+
+let {i in 1..A_Un} grafo := grafo union {A_U[i]};
+
+if (A_Nn>1) then {
+   let {i in 1..A_Nn} grafo := grafo union {A_N[i]};
+}
+if (A_Cn>0) then {
+   let {i in 1..A_Cn} grafo := grafo union {A_C[i]};
+}
+
+let lgrafo := card(grafo); 
+
+let g_iniziale := grafo;
+
